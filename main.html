@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SocialGunda - Summer Story Challenge</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        background: linear-gradient(to bottom right, #ff6b6b, #4ecdc4, #45b7d1);
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 2rem;
+      }
+
+      .container {
+        max-width: 28rem;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .brand-section {
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .logo {
+        width: 64px;
+        height: 64px;
+        margin: 0 auto 1rem;
+        display: block;
+      }
+
+      .brand-title {
+        font-size: 2.5rem;
+        font-weight: 300;
+        color: white;
+        letter-spacing: -0.025em;
+        margin-bottom: 0.5rem;
+      }
+
+      .brand-title strong {
+        font-weight: 700;
+      }
+
+      .campaign-title {
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.9);
+        letter-spacing: 0.025em;
+      }
+
+      .campaign-title strong {
+        font-weight: 600;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(4px);
+        overflow: hidden;
+      }
+
+      .steps {
+        padding: 1.5rem 1rem 0;
+      }
+
+      .step {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+        transition: all 0.3s ease;
+      }
+
+      .step:hover {
+        transform: translateX(4px);
+      }
+
+      .step-number {
+        width: 1.5rem;
+        height: 1.5rem;
+        background: linear-gradient(
+          to bottom right,
+          rgba(255, 107, 107, 0.2),
+          rgba(69, 183, 209, 0.2)
+        );
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: #ff6b6b;
+      }
+
+      .step-text {
+        font-size: 0.875rem;
+        color: #4a5568;
+        transition: color 0.3s ease;
+      }
+
+      .step:hover .step-text {
+        color: #45b7d1;
+      }
+
+      .form-section {
+        padding: 1.5rem;
+      }
+
+      .input-group {
+        position: relative;
+        margin-bottom: 2rem;
+      }
+
+      .input-icon {
+        position: absolute;
+        left: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1rem;
+        height: 1rem;
+        color: #a0aec0;
+      }
+
+      .input-field {
+        width: 100%;
+        height: 3rem;
+        padding: 0 1rem 0 2.5rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.75rem;
+        background: rgba(255, 255, 255, 0.8);
+        transition: all 0.3s ease;
+        font-size: 0.875rem;
+      }
+
+      .input-field:focus {
+        outline: none;
+        border-color: #45b7d1;
+        box-shadow: 0 0 0 3px rgba(69, 183, 209, 0.1);
+      }
+
+      .submit-btn {
+        width: 100%;
+        height: 3rem;
+        background: linear-gradient(to right, #ff6b6b, #45b7d1);
+        border: none;
+        border-radius: 0.75rem;
+        color: white;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .submit-btn:hover {
+        background: linear-gradient(to right, #45b7d1, #ff6b6b);
+        transform: translateY(-1px);
+      }
+
+      .submit-btn span {
+        display: inline-block;
+        transition: transform 0.3s ease;
+      }
+
+      .submit-btn:hover span {
+        transform: translateX(-0.5rem);
+      }
+
+      .submit-btn::after {
+        content: "→";
+        position: absolute;
+        right: 1rem;
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      .submit-btn:hover::after {
+        opacity: 1;
+      }
+
+      .help-text {
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .help-link {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: #f7fafc;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        color: #718096;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .help-link:hover {
+        background: #edf2f7;
+        color: #4a5568;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="brand-section">
+        <img
+          src="https://www.socialgunda.com/logos/logo_no_text.png"
+          alt="SocialGunda Logo"
+          class="logo"
+        />
+        <h1 class="brand-title"><strong>Social</strong>Gunda</h1>
+        <div class="campaign-title">
+          Summer Story <strong>Challenge</strong>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <span class="step-text">Share your story</span>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <span class="step-text">Paste the link</span>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <span class="step-text">Get featured</span>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <form id="storyForm" onsubmit="handleSubmit(event)">
+            <div class="input-group">
+              <svg
+                class="input-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+                ></path>
+                <path
+                  d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+                ></path>
+              </svg>
+              <input
+                type="url"
+                class="input-field"
+                placeholder="Your Instagram story link"
+                required
+              />
+            </div>
+            <button type="submit" class="submit-btn">
+              <span>Submit Story</span>
+            </button>
+          </form>
+          <div class="help-text">
+            <a href="#" class="help-link">Questions? Check our guidelines</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault();
+        const button = event.target.querySelector("button");
+        const originalText = button.innerHTML;
+        button.innerHTML = "<span>Submitting...</span>";
+        button.disabled = true;
+
+        // Simulate form submission
+        setTimeout(() => {
+          button.innerHTML = originalText;
+          button.disabled = false;
+          event.target.reset();
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
